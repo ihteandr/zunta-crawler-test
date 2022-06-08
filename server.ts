@@ -1,16 +1,15 @@
+import * as express from "express";
+import * as bodyParser from "body-parser";
 import controller from './controller';
 import * as config from 'config';
 
 const serverConfigs = config.get('server');
 const functionsConfig = config.get('functions');
-/**
- * Responds to any HTTP request.
- *
- * @param {!express:Request} req HTTP request context.
- * @param {!express:Response} res HTTP response context.
- */
-exports.run = async (req, res) => {
-    const action = req.query.action;
+
+const server = express();
+server.use(bodyParser.json());
+server.get('/', async (req, res) => {
+  const action = req.query.action;
     console.log('action', action);
     if (!action) {
         res.send('Action is not specified')
@@ -35,4 +34,5 @@ exports.run = async (req, res) => {
         }
         res.send(e.message)
     }
-}
+})
+server.listen(8080);
