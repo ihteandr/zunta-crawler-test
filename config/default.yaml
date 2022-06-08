@@ -1,0 +1,12 @@
+server:
+  port: 3090
+  host: 'api'
+  key: 'b217201d-edbf-4ab7-94ff-49350b1288ec'
+  poolSize: 5
+  type: 'main'
+db:
+  port: 27017
+  host: 'localhost'
+  databaseName: 'crawlerdb'
+functions:
+  key: 'G5TuVZ65JLRMBjxYfbMqyhU3arU9hs'

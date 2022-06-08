@@ -1,0 +1,2 @@
+application: 
+  management: 'https://dev1.zunta.com/api'

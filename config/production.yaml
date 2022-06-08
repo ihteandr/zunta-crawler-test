@@ -1,0 +1,8 @@
+application: 
+  management: 'https://api.zunta.com/api'
+  managementKey: '847ae2df-41ed-4d3c-a5fd-63749b168e31'
+  workers: 'https://us-central1-zunta-264517.cloudfunctions.net/workers-prod'
+redis:
+  host: '35.209.123.101'
+  password: 'QV7qWm9efnhBD6exedmjYb8KKhFkzruE6Yc2qtFV723HktEnJpZmeMAYWuDFAjvFhyUH2rFYjBSdy8SsgUKThrfnte3gQqmbEbaxgdtJURDRGcccJa5U9GpFTVw5Y9RK'
+  port: 6379

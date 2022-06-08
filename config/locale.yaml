@@ -1,0 +1,7 @@
+application:
+  management: 'http://localhost:3000/api'
+  managementKey: '847ae2df-41ed-4d3c-a5fd-63749b168e31'
+  workers: 'http://localhost:3099'
+redis:
+  host: 'localhost'
+  port: 6379
