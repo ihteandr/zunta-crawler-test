@@ -1,15 +1,5 @@
 import * as puppeteer from 'puppeteer';
-const PCR = require("puppeteer-chromium-resolver");
-const option = {
-    revision: "",
-    detectionPath: "",
-    folderName: ".chromium-browser-snapshots",
-    defaultHosts: ["https://storage.googleapis.com", "https://npm.taobao.org/mirrors"],
-    hosts: [],
-    cacheRevisions: 2,
-    retry: 3,
-    silent: false
-};
+
 export class PccBaseCrawler {
     username: string;
     password: string;
@@ -31,20 +21,17 @@ export class PccBaseCrawler {
         console.log(preparedLog);
     }
     async enter() {
-        const stats = await PCR(option);
-
-        this.browser = await stats.puppeteer.launch({
+        this.browser = await puppeteer.launch({
             args: [
                 '--disable-gpu',
                 '--disable-dev-shm-usage',
                 '--disable-setuid-sandbox',
                 '--no-first-run',
                 '--no-sandbox',
-                '--no-zygote'
+                '--no-zygote',
             ],
             headless: true,
             timeout:  this.regularTimeout,
-            executablePath: stats.executablePath
         });
         this.browser.on('disconnected', () => {
             console.log('disconnected');
