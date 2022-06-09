@@ -9,12 +9,8 @@ export class GetFacilitiesResidentsContactsReports extends PccBaseCrawler {
 
     async start (): Promise<any> {
         console.log('start fetch residents', this.facilityIds);
-        try {
-            await this.enter();
-        } catch (e) {
-            throw new Error('access denied');
-        }
-
+        await this.enter();
+        
         await this.gotoReportPage([
             'Resident Contacts',
             'Resident Contacts (Admin - ADT / Profiles)',
