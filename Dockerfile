@@ -13,8 +13,8 @@ RUN apt-get update \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 RUN npm install
-RUN npm run build
 COPY . .
 
+RUN npm run build
 EXPOSE 8080
 CMD [ "npm", "run" "start:stage" ]
