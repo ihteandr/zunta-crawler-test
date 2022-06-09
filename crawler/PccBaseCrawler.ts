@@ -29,6 +29,7 @@ export class PccBaseCrawler {
                 '--no-first-run',
                 '--no-sandbox',
                 '--no-zygote',
+                '--disable-setuid-sandbox'
             ],
             headless: true,
             timeout:  this.regularTimeout,
