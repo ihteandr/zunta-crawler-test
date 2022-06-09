@@ -11,6 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PccBaseCrawler = void 0;
 const puppeteer = require("puppeteer");
+const config = require("config");
+const functionsConfig = config.get('functions');
 class PccBaseCrawler {
     constructor(username, password) {
         this.regularTimeout = 60 * 1000;
@@ -29,8 +31,6 @@ class PccBaseCrawler {
     }
     enter() {
         return __awaiter(this, void 0, void 0, function* () {
-            const path = process.env.NODE_ENV === 'stage' ? '/usr/bin/chromium-browser' : undefined;
-            console.log('chrome path', path);
             this.browser = yield puppeteer.launch({
                 args: [
                     '--disable-gpu',
@@ -42,7 +42,7 @@ class PccBaseCrawler {
                 ],
                 headless: true,
                 timeout: this.regularTimeout,
-                executablePath: path
+                executablePath: functionsConfig.puppeteerPath
             });
             this.browser.on('disconnected', () => {
                 console.log('disconnected');
