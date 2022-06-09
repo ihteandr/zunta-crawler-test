@@ -21,7 +21,8 @@ export class PccBaseCrawler {
         console.log(preparedLog);
     }
     async enter() {
-        process.env.PUPPETEER_EXECUTABLE_PATH
+        const path = process.env.NODE_ENV === 'stage' ? '/usr/bin/chromium-browser' : undefined
+        console.log('chrome path', path);
         this.browser = await puppeteer.launch({
             args: [
                 '--disable-gpu',
@@ -33,7 +34,7 @@ export class PccBaseCrawler {
             ],
             headless: true,
             timeout:  this.regularTimeout,
-            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
+            executablePath: path
         });
         this.browser.on('disconnected', () => {
             console.log('disconnected');
