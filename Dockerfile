@@ -3,7 +3,8 @@ FROM node:14-slim
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN apt-get install chromium-browser
+RUN apt-get update \
+    && apt-get install -y chromium-browser
 RUN apt-get update \
     && apt-get install -y wget gnupg \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
