@@ -24,11 +24,8 @@
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.2",
     "rimraf": "^3.0.0",
-    "ts-node": "^8.4.1",
     "typeorm": "^0.2.22",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
+    "uuid": "^8.3.2",
     "cross-env": "^7.0.3",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
@@ -39,6 +36,7 @@
     "tslint": "^5.20.1",
     "typescript": "^4.2.3"
   },
+  "devDependencies": {},
   "scripts": {
     "build": "tsc",
     "start:prod": "tsc && cross-env NODE_ENV=production && node ./dist/server.js",
