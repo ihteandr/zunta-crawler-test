@@ -8,7 +8,7 @@ const functionsConfig = config.get('functions');
 
 const server = express();
 server.use(bodyParser.json());
-server.get('/*', async (req, res) => {
+server.post('/', async (req, res) => {
   const action = req.query.action;
     console.log('action', action);
     if (!action) {
@@ -35,6 +35,6 @@ server.get('/*', async (req, res) => {
         res.send(e.message)
     }
 })
-server.listen(8080, () => {
-    console.log('server started')
+server.listen(serverConfigs.port, () => {
+    console.log('server started', serverConfigs.port)
 });
