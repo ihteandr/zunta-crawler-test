@@ -29,6 +29,7 @@ class PccBaseCrawler {
     }
     enter() {
         return __awaiter(this, void 0, void 0, function* () {
+            process.env.PUPPETEER_EXECUTABLE_PATH;
             this.browser = yield puppeteer.launch({
                 args: [
                     '--disable-gpu',
@@ -40,6 +41,7 @@ class PccBaseCrawler {
                 ],
                 headless: true,
                 timeout: this.regularTimeout,
+                executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
             });
             this.browser.on('disconnected', () => {
                 console.log('disconnected');
