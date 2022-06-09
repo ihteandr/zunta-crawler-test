@@ -21,7 +21,7 @@
     "lodash.uniq": "^4.5.0",
     "moment": "^2.29.1",
     "prettier": "^1.19.1",
-    "puppeteer": "14.3.0",
+    "puppeteer": "8.0.0",
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.2",
     "rimraf": "^3.0.0",
