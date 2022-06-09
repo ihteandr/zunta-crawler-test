@@ -38,8 +38,8 @@
   "devDependencies": {},
   "scripts": {
     "build": "tsc",
-    "start:stage": "tsc && cross-env NODE_ENV=stage node ./dist/server.js", 
-    "start:prod": "tsc && cross-env NODE_ENV=production node ./dist/server.js",
+    "start:stage": "cross-env NODE_ENV=stage node ./dist/server.js", 
+    "start:prod": "cross-env NODE_ENV=production node ./dist/server.js",
     "start": "tsc && cross-env NODE_ENV=locale node ./dist/server.js"
   }
 }
