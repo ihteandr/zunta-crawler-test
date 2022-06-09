@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start:prod": "tsc && cross-env NODE_ENV=production && node ./dst/server.js",
+    "start:prod": "tsc && cross-env NODE_ENV=production && node ./dist/server.js",
     "start": "tsc && cross-env NODE_ENV=locale functions-framework --target=run  --port=3090 --set-env-vars NODE_ENV=locale"
   }
 }
