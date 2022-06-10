@@ -1,5 +1,7 @@
 server: 
   port: 8080
+functions:
+  cromium: '/usr/bin/chromium-browser'
 application:
   management: 'https://stage.zunta.com/api'
   managementKey: '847ae2df-41ed-4d3c-a5fd-63749b168e31'

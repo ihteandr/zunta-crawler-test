@@ -34,7 +34,7 @@ export class PccBaseCrawler {
             ],
             headless: true,
             timeout:  this.regularTimeout,
-            executablePath: functionsConfig.puppeteerPath
+            executablePath: functionsConfig.cromium
         });
         this.browser.on('disconnected', () => {
             console.log('disconnected');
