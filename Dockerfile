@@ -2,8 +2,8 @@ FROM node:fermium
 
 WORKDIR /usr/src/app
 
-# hadolint ignore=DL3009
-RUN apt-get install -y chromium-browser
+RUN apt-get update
+RUN apt-get install chromium -y
 
 COPY package*.json ./
 RUN npm install
