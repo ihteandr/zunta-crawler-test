@@ -31,9 +31,11 @@ export class PccBaseCrawler {
                 '--no-first-run',
                 '--no-sandbox',
                 '--no-zygote',
+                '--use-gl=egl'
             ],
             headless: true,
             timeout:  this.regularTimeout,
+            ignoreDefaultArgs: ['--disable-extensions'],
             executablePath: functionsConfig.cromium
         });
         this.browser.on('disconnected', () => {
