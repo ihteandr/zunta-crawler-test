@@ -15,4 +15,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD npm run start:stage
+RUN npm run start:stage
