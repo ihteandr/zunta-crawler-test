@@ -5,8 +5,6 @@ application:
   managementKey: '847ae2df-41ed-4d3c-a5fd-63749b168e31'
   # management: 'http://localhost:3000/api'
   workers: 'https://us-central1-zunta-264517.cloudfunctions.net/workers-stage'
-functions:
-  puppeteerPath: '/usr/bin/google-chrome'
 redis:
   host: '34.134.227.73'
   password: 'QV7qWm9efnhBD6exedmjYb8KKhFkzruE6Yc2qtFV723HktEnJpZmeMAYWuDFAjvFhyUH2rFYjBSdy8SsgUKThrfnte3gQqmbEbaxgdtJURDRGcccJa5U9GpFTVw5Y9RK'
