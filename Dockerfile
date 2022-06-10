@@ -3,8 +3,8 @@ FROM alpine:3.6
 WORKDIR /usr/src/app
 
 RUN apk update && apk add --no-cache nmap && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+    sh -c 'echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories' && \
+    sh -c 'echo http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories' && \
     apk update && \
     apk add --no-cache \
       chromium \
@@ -12,8 +12,6 @@ RUN apk update && apk add --no-cache nmap && \
       "freetype>2.8" \
       ttf-freefont \
       nss
-
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 COPY package*.json ./
 RUN npm install
 COPY . .
